@@ -1,0 +1,18 @@
+:root { --maxw: 880px; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+  line-height: 1.6; background: #0b1020; color: #e9ecf1;
+}
+.container { max-width: var(--maxw); margin: 0 auto; padding: 1.5rem; }
+header { padding: 3rem 1.5rem; text-align: center; }
+h1 { margin: 0 0 0.5rem; font-size: clamp(2rem, 6vw, 3rem); }
+main { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card {
+  background: #131a33; border: 1px solid #223056; border-radius: 16px; padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,.3);
+}
+.card h2 { margin-top: 0; }
+footer { opacity: .7; text-align: center; padding-bottom: 3rem; }
+a { color: #8ecaff; text-decoration: none; }
+a:hover { text-decoration: underline; }
