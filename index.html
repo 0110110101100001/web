@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="nav-logo">
+        <a href="#">
+          <img src="logo.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="#">Domů</a>
+        <a href="#">Funkce</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
+  </nav>
   <header class="container">
     <h1>Test model</h1>
     <p>pingovací doména + testovaní frontendu</p>
@@ -21,10 +35,28 @@
       <h2>Webhooky</h2>
       <p>Webhooky běží na backendu. Tohle je jen statická vizitka.</p>
     </section>
+
+    <section class="card">
+      <h2>Co tu je</h2>
+      <p>Jednoduché HTML + CSS. Nic víc není potřeba.</p>
+    </section>
   </main>
 
   <footer class="container">
     <small>© 2025 Já</small>
   </footer>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 0) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+
 </body>
 </html>

@@ -16,3 +16,55 @@ main { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(
 footer { opacity: .7; text-align: center; padding-bottom: 3rem; }
 a { color: #8ecaff; text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: transparent; /* nahoře průhledné */
+  border-bottom: 1px solid transparent;
+  z-index: 1000;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.navbar.scrolled {
+  background: #0b1020; /* po scrollu tmavé pozadí */
+  border-bottom: 1px solid #223056;
+}
+
+.nav-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* levý pruh, střední obsah, pravý pruh */
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.navbar a {
+  color: #e9ecf1;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #8ecaff;
+}
+.nav-logo {
+  justify-self: start;
+  /* zrušíme levý padding containeru (1.5rem) + levý padding nav-content (1rem) */
+  margin-left: calc(-8.5rem - 1rem);
+}
+.nav-logo img {
+  height: 40px; /* uprav podle velikosti loga */
+  display: block;
+}
+.nav-logo a {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.5rem; /* klidně uprav/odstraň */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  justify-self: center; /* odkazy na střed */
+}
