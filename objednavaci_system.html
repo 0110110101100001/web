@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mr. chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="nav-logo">
+        <a href="#">
+          <img src="logo.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="#">Domů</a>
+        <a href="#">Funkce</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="container header--tall">
+    <h1>Objednávací systém</h1>
+    <p>Představujeme vám objednávací systém integrovaný do WhatsAppu</p>
+  </header>
+  
+  <main class="container audio-page">
+    <section class="pros-cons-block">
+      <h2>Jaké jsou výhody a nevýhody objednávacího systému integrovaného do WhatsAppu?</h2>
+  
+      <div class="two-col">
+        <section class="card">
+          <h3>Výhody</h3>
+          <ul class="checklist">
+            <li>Uživatelé nestahují novou aplikaci</li>
+            <li>Rychlé nasazení</li>
+            <li>Podpora více jazyků</li>
+            <li>Přístup k analytics </li>
+            <li>spuštění QR kódem nebo textovou zprávou </li>
+            <li>(obsah si lze přehrát opakovaně bez dalšího čerpání dat)</li>
+            <li>(uživatelé ví, že žadnou část nepřeskočili)</li>
+            <li>umí předat uživateli více než jen audio (video, pdf, foto ...)</li>
+            <li>(osobité poděkování každému uživateli / předání předejte nabídku dalších služeb výhradně skutečným návštěvníkům)</li>
+            <li>nepotřebujete investovat do vlastního hardwaru</li>
+          </ul>
+        </section>
+  
+        <section class="card">
+          <h3>Nevýhody</h3>
+          <ul class="cons">
+            <li>nezbytný přístup k datům / internetu</li>
+            <li>(závislost na zrzkovi)</li>
+            <li>bez podpory pro tlačítkové mobily</li>
+            <li>Delší stopy mohou vyžadovat kompresi</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="ux-section section-pad">
+      <h2>User experience</h2>
+    
+      <div class="two-col">
+        <!-- Video ukázka -->
+        <section class="card ux-card video-only">
+          <video
+            class="media"
+            src="demo.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+          ></video>
+        </section>
+        <!-- Vyzkoušejte sami -->
+        <section class="card ux-card">
+          <h3>Vyzkoušejte sami</h3>
+          <div class="media-frame">
+            <!-- nahraď vlastní QR obrázkem; dočasně placeholder -->
+            <img class="media" src="qr-demo.png" alt="QR kód na demoverzi audioprůvodce" />
+          </div>
+          <p class="hint">Otevři kameru, naskenuj QR a spustí se demoverze ve WhatsAppu.</p>
+    
+          <div class="try-actions">
+            <a class="btn-primary" href="https://example.com/demo" target="_blank" rel="noopener">Otevřít demo</a>
+            <small>Nemáš po ruce mobil? Klikni na tlačítko.</small>
+          </div>
+        </section>
+      </div>
+    </section>
+
+<section class="section-pad" style="grid-column:1 / -1;">
+  <div class="two-col" style="align-items:stretch;">
+    <!-- STANDARD -->
+    <section class="card plan-card plan-card--phone" style="display:flex; flex-direction:column;">
+      <div class="plan-card__header">
+        <div class="plan-card__name">Standard</div>
+        <div class="plan-card__price">
+          <span class="price-main">1 650&nbsp;Kč</span>
+          <span class="price-sub">/ měsíc</span>
+        </div>
+        <div class="plan-card__note">Měsíční fakturace, kdykoli zrušíte</div>
+      </div>
+      <ul class="checklist plan-card__features">
+        <li>Spuštění do 48&nbsp;hodin</li>
+        <li>Neomezené zprávy a multimédia</li>
+        <li>Vícejazyčný obsah</li>
+        <li>Základní statistiky</li>
+        <li>Aktualizace obsahu v ceně</li>
+      </ul>
+      <div class="cta-row cta-row--center">
+        <a class="btn-primary btn-sm" href="index.html#formular">Kontaktujte nás</a>
+      </div>
+    </section>
+
+    <!-- PRO -->
+    <section class="card plan-card plan-card--phone" style="display:flex; flex-direction:column;">
+      <div class="plan-card__header">
+        <div class="plan-card__name">Pro</div>
+        <div class="plan-card__price">
+          <span class="price-main">2 900&nbsp;Kč</span>
+          <span class="price-sub">/ měsíc</span>
+        </div>
+        <div class="plan-card__note">Včetně priority podpory</div>
+      </div>
+      <ul class="checklist plan-card__features">
+        <li>Vše ze Standard</li>
+        <li>Vlastní doména/číslo & brand</li>
+        <li>Rozšířené statistiky & report</li>
+        <li>Obsahové A/B testy</li>
+        <li>1× měs. konzultace (30&nbsp;min)</li>
+      </ul>
+      <div class="cta-row cta-row--center">
+        <a class="btn-primary btn-sm" href="index.html#formular">Poptejte Pro</a>
+      </div>
+    </section>
+  </div>
+</section>
+    
+
+  </main>
+
+  <footer class="container">
+    <small>© 2025 Já</small>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 0) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+
+</body>
+</html>

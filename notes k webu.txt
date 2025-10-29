@@ -1,0 +1,51 @@
+faq:
+            <li>kina/divadla??</li>
+              <li>Organizátoři festivalů, koncertů a sportovních akcí</li>
+            <li>carshare / půjčovna??</li>
+již od 500 kč / měsíc (expect 100 server -základní verze - text to text je bezudržbová, pokud budou chtít přidávat i soubory, tak tam je 1h/měs za udržbu)
+
+business api - bud si nastavíte sami podle videonávodu, nebo nastavíme my
+
+
+index:
+<h2>pořád ta wa knížka   návrh na celou appku stories co si klient bude chtít zažít s propojením do real life       wa newsletter    Nonstop delegát, buddy v posilce, airbnb podpora festival support...</h2>
+Propojení elektronických adres a možnost komunikace i bez vaší přítomnosti.
+
+
+audioprůvodce
+       <h3>Náklady  obhají si vyšši cenu vstupného</h3>
+      <li>tady nebude co to stojí, ale že pomůžeme i se zařízením dabungu.   Ke každému spolipracujícímu klientovi přistupujeme individuálně a finální cenu tak nelze přesně určit shadow </li>
+      <li>(dabingové služby a licence - nižší desítky tisíc)</li>
+      <li>( provize od 3000 kč / měsíc -> 1000 kč / měsíc )</li> -->
+
+
+FAQ??
+
+
+
+Karty služeb → klikací blok s mini ikonou + “šipkou”
+Na homepage jsou 3 karty služeb, už jsou wrapnuté do .card-link. 
+Přidej do karty vpravo nahoře drobnou šipku (→) a dole “Mikro-CTA” (“Zjistit víc”) –
+ zvedá to prokliky na detail služby. CSS už umí hover zvětšení; 
+jen přidej vizuální affordance.
+
+Video: rychlejší start a klidnější dojem
+U videí přidej preload="metadata" a poster="poster.jpg" pro lepší LCP a hezčí načtení.
+U úzkého videa na výšku zvaž object-position:center top; 
+a volitelně muted playsinline už máš.
+
+Formulář: snížit tření + jasný benefit
+U kontaktu přidej krátký řádek pod nadpis: “Ozveme se do 24 h. Žádné závazky.”
+ — to snižuje obavy. Technicky: zkrať počet povinných polí (ponech email + zpráva),
+ což už máš; přidej inline potvrzení o odeslání (JS toast) a link
+ “nechci formulář → napište na WhatsApp”.
+ Form je v index.html hezky strukturovaný, stačí drobný UX nápis nad ním
+
+Mikrokopie tlačítek v kartách (bez měnění textů)
+Designově dej CTA v kartách vždy do .cta-row--center + full-width na mobilu. 
+Už to částečně máš; sjednoť, aby každá karta končila jasnou akcí. 
+CSS pro .btn-primary je OK, jen na mobilu:
+
+
+Social ikony SVG nech rel="noopener" a decoding="async" pro obrázky,
+ přidej loading="lazy" i na “placeholder.jpg”.

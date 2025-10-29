@@ -3,60 +3,400 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mr. chat</title>
+  <title>Mr. chat – Audioprůvodce a automatizace na WhatsAppu</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- plynulý scroll na #formular v kontaktu -->
+  <style>html{scroll-behavior:smooth}</style>
 </head>
+<script>
+  (function(){
+    const ta = document.querySelector('#contactForm textarea');
+    if(!ta) return;
+
+    const autosize = el => {
+      el.style.height = 'auto';                
+      const next = Math.min(el.scrollHeight,   
+                            window.innerHeight * 0.4); 
+      el.style.height = next + 'px';
+    };
+
+    autosize(ta);
+    ta.addEventListener('input', () => autosize(ta));
+
+    window.addEventListener('resize', () => autosize(ta));
+  })();
+</script>
+
 <body>
   <nav class="navbar">
     <div class="container nav-content">
-      <div class="nav-logo">
-        <a href="#">
-          <img src="logo.png" alt="Logo" />
-        </a>
+      <div class="nav-logo" aria-label="Domů">
+        <img src="logo_s_názvem.svg" alt="Logo" />
       </div>
-      <div class="nav-links">
-        <a href="#">Domů</a>
-        <a href="#">Funkce</a>
-        <a href="#">Kontakt</a>
+  
+      <ul class="nav-links" role="menubar" aria-label="Hlavní navigace">
+        <li role="none"><a role="menuitem" href="index.html#start">Úvod</a></li>
+
+        <li class="has-dropdown" role="none">
+          <a class="nav-trigger" role="button" tabindex="0"
+          aria-haspopup="true" aria-expanded="false">
+            Naše produkty
+            <svg class="caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+            </svg>
+          </a>
+          <ul class="dropdown" role="menu" aria-label="Produkty">
+            <li role="none"><a role="menuitem" href="audiopruvodce.html">Audioprůvodce</a></li>
+            <li role="none"><a role="menuitem" href="asistent.html">FAQ asistent</a></li>
+          </ul>
+        </li>
+
+
+        <li role="none"><a role="menuitem" href="index.html#formular">Kontakt</a></li>
+      </ul>
+  
+      <div class="nav-actions">
+        <a href="mailto:info@mrchat.cz" aria-label="E-mail" class="icon-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 13L2 6.75V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6.75L12 13zm0-2L2.4 5h19.2L12 11z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/420123456789" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 3.4 20.6L2 22l1.5-.4A11 11 0 1 0 20.5 3.5Zm-8.2 16.6a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-2.7.7.7-2.6-.2-.3a9.1 9.1 0 1 1 7.1 3.7Zm5.1-6.6c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.2-.8.9-1 1c-.2.2-.4.2-.7.1c-.3-.1-1.4-.5-2.6-1.6c-1-.9-1.6-2-1.8-2.3c-.2-.3 0-.5.1-.7l.5-.7c.2-.2.2-.4.3-.6c.1-.2 0-.4 0-.6s-.7-1.8-1-2.5c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4c-.3.3-1.2 1.1-1.2 2.8s1.3 3.2 1.5 3.4c.2.2 2.5 3.8 6 5.2c.8.3 1.4.5 1.9.6c.8.2 1.6.2 2.2.1c.7-.1 2.2-.9 2.5-1.8s.3-1.6.2-1.8s-.3-.2-.6-.3Z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </nav>
-  <header class="container">
-    <h1>Test model</h1>
-    <p>pingovací doména + testovaní frontendu</p>
+  
+
+  <header class="container header--tall " id="start">
+    <h1>Komunikujte efektivněji přes WhatsApp</h1>
+    <p>
+      Stavíme chytré produkty na platformě, kterou vaši zákazníci již každý den používají.
+WhatsApp je rychlý, srozumitelný a nevyžaduje instalaci nové, neznámé aplikace — stává se tak ideální platformou
+pro audioprůvodce, zákaznickou podporu dostupnou 24/7 nebo rádce do kapsy.
+    </p>
+    <div style="display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin-top:1.2rem;">
+      <a class="btn-primary" href="#nase_sluzby">Naše produkty</a>
+      <a class="btn-primary" href="#formular">Kontaktujte nás</a>
+    </div>
+
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Co tu je</h2>
-      <p>Jednoduché HTML + CSS. Nic víc není potřeba.</p>
+  <section class="container section-pad" style="margin-top:-.5rem;">
+    <div class="reveal" data-delay="100"
+         style="display:grid; gap:1rem; grid-template-columns:repeat(2, minmax(280px, 1fr)); align-items:stretch;">
+      
+      <section style="display:flex; flex-direction:column; justify-content:flex-start;">
+        <h2>Proč WhatsApp</h2>
+        <p>
+          Kdy naposledy byl někdo nadšený z toho, že si má kvůli jedné akci instalovat novou aplikaci?
+          Také nevíme, avšak drtivá většina lidí má již WhatsApp stažený, 
+          tak proč je posílat do neznáma s novou aplikací, když je lze oslovit tam, kde jsou jako doma?
+
+        </p>
+        <p>WhatsApp je rychlý, srozumitelný a hlavně ho  mají lidé neustále po ruce. 
+        Podporuje text, hlas, obrázky i videa, takže naše programy mohou zásobovat koncové zákazníky bohatým 
+        obsahem 24 hodin denně. </p>
+
+              
+<!--  tady bych pak dal reference -->
+        
+      </section>
+
+      <section  style="display:flex; flex-direction:column; justify-content:flex-start;">
+        <h2>Proč my</h2>
+        <p>Nasazení programu? Jednodušší už to být nemůže. 
+          První verzi spustíme hned, jakmile nám dodáte materiály, které chcete s klienty sdílet. Případné úpravy zvládáme za pochodu bez odstávky. 
+          Nemusíte pořizovat žádný nový hardware ani rozšiřovat svůj tým – veškerou technickou magii zařídíme my. 
+          Vy získáte moderní službu bez starostí navíc a vaši zákazníci interaktivní zážitek.
+        </p>
+      </section>
+    </div>   
+  </section> 
+
+
+  <main class="container" id="nase_sluzby">
+
+    <section class="section-break" >
+
+
+
+      <h2>Naše služby</h2>
+    </section >
+
+    <a class="card-link reveal" data-delay="100" href="audiopruvodce.html">
+      <section class="card service-card">
+        <span class="card-corner-arrow" aria-hidden="true">→</span>
+    
+        <div class="card-content">
+      <h2>Audioprůvodce</h2>
+      <p>WhatsApp audioprůvodce je inovativní způsob, jak zvýšit zapojení a spokojenost návštěvníků ve vaší instituci.
+         Hosté si sami zvolí vybranou expozici nebo trasu a spustí si audioprůvodce přímo v chatu.
+         Mohou poslouchat profesionálně namluvené komentáře, vidět fotografie či videa a prozkoumávat exponáty z pohodlí svého telefonu. </p>
+         <div class="card-microcta" aria-hidden="true">
+          Zjistit více <span class="arrow">→</span>
+        </div>
+      </div>
     </section>
-    <section class="card">
-      <h2>Webhooky</h2>
-      <p>Webhooky běží na backendu. Tohle je jen statická vizitka.</p>
+  </a>
+
+    <section class="card service-card card-ghost">
+      <span class="card-corner-arrow" aria-hidden="true">→</span>
+  
+      <div class="card-content">
+    <h2>Gym bro</h2>
+    <p>Propojení elektronických adres a možnost komunikace i bez vaší přítomnosti.</p>
+    <div class="card-microcta" aria-hidden="true">
+      Zjistit více <span class="arrow">→</span>
+    </div>
+  </div>
+</section>
+
+
+    <a class="card-link reveal" href="asistent.html" data-delay="100">
+      <section class="card service-card">
+        <span class="card-corner-arrow" aria-hidden="true">→</span>
+    
+        <div class="card-content">
+    
+      <h2>FAQ asistent</h2>
+      <p>Naše řešení FAQ asistenta na WhatsAppu pomáhá ubytovatelům, provozovatelům a cestovním delegátům rychle zodpovídat běžné dotazy hostů kdykoli a kdekoli.
+         Od běžných dotazů typu heslo od Wi-Fi až k radám místního znalce.</p>
+      <div class="card-microcta" aria-hidden="true">
+        Zjistit více <span class="arrow">→</span>
+      </div>
+    </div>
+  </section>
+</a>
+
+
+
+
+
+
+<section class="card reveal" style="grid-column:1 / -1;" data-delay="100">
+  <h2>Projekt na míru</h2>
+  <p>Chcete do svého pracovního života kreativně implementovat WhatsApp, propojit jej s emailem nebo kalendářem? Popište nám svůj problém, nalezneme řešení. </p>
+</section>
+
+<section class="section-pad" style="grid-column:1 / -1;">
+  <div class="section-break">
+    <h2>Jak spolupráce probíhá</h2></div>
+
+  <div style="display:grid; gap:1rem; grid-template-columns:repeat(2, minmax(280px, 1fr)); align-items:stretch;">
+
+       <section class="card reveal" data-delay="50" style="display:flex; flex-direction:column;">
+        <h2>1) Dejte nám o sobě vědět</h2>
+        <p>Napište nám e-mail nebo vyplňte kontaktní formulář. 
+          Popište nám svou situaci a s čím vám můžeme pomoci. Případně nám rovnou pošlete soubory, které chcete sdílet s koncovými zákazníky.</p>
+      
+        <div class="cta-row">
+          <a class="btn-primary btn-sm" href="#formular" aria-label="Kontaktujte nás">
+            Kontaktujte nás
+          </a>
+        </div>
+      </section>
+
+
+    <section class="card reveal" data-delay="100">
+      <h2>2) Ozveme se zpět</h2>
+      <p>Jakmile to bude možné, ozveme se zpět a navrhneme termíny pro schůzku / Zoom meeting / telefonát. 
+        S Intorverními zájemci zvládneme celý proces ve WhatsAppu. </p>
     </section>
 
-    <section class="card">
-      <h2>Co tu je</h2>
-      <p>Jednoduché HTML + CSS. Nic víc není potřeba.</p>
+    <section class="card reveal" data-delay="50">
+      <h2>3) Dohodneme další postup</h2>
+      <p>Podle vybraného produktu, rozsahu spolupráce a vašich potřeb najdeme nejlepší možné řešení.</p>
     </section>
+
+    <section class="card reveal" data-delay="100">
+      <h2>4) Nasadíme program</h2>
+      <p>Vyřešíme technickou stránku věci, abychom po získání potřebných souborů mohli ihned spustit plnou verzi vašeho WhatsAppového pomocníka.</p>
+    </section>
+
+    <section class="card reveal" style="grid-column:1 / -1;" data-delay="100">
+      <h2>5) Máme hotovo</h2>
+      <p>Program nyní běží. WhatsAppový pomocník je dostupný vášim návštěvníkům 24/7. </p>
+    </section>
+  </div>
+</section>
+
+    
+    <section class="section-break" id="formular">
+      <h2>Kontakt</h2>
+    </section>
+
+    <section class="card reveal" data-delay="100">
+      <h2>E-mail</h2>
+      <p><a href="mailto:info@mrchat.cz">info@mrchat.cz</a></p>
+    </section>
+
+    <section class="card reveal" data-delay="100">
+        <h2>Telefon</h2>
+        <p>+420 ... </p>
+      </section>
+    
+      <section class="card reveal" data-delay="100">
+      <h2>Datová schránka</h2>
+      <p>IČO: <br>
+        Datovka:
+      </p>
+     </section>
+
+
+     <section class="contact-panel reveal"  data-delay="0">
+      <h2 class="reveal" data-delay="0">Napište nám</h2>
+    
+      <form id="contactForm" class="contact-form">
+        <div class="form-grid">
+          <!-- ŘADA 1 -->
+          <div class="form-row reveal" data-delay="50">
+            <label for="name">Jméno / firma</label>
+            <input id="name" name="name" type="text" placeholder="Vaše jméno / název firmy" autocomplete="name" />
+          </div>
+    
+          <div class="form-row reveal" data-delay="100">
+            <label for="service">Služba</label>
+            <select id="service" name="service">
+              <option value="" selected disabled hidden></option>
+              <option value="audiopruvodce">Audioprůvodce</option>
+              <option value="faq-asistent">FAQ asistent</option>
+              <option value="jine">Jiné</option>
+            </select>
+          </div>
+    
+          <!-- ŘADA 2 -->
+          <div class="form-row reveal" data-delay="50">
+            <label for="email">E-mail <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" placeholder="adresa@domena.cz" required autocomplete="email" />
+          </div>
+    
+          <div class="form-row reveal" data-delay="100">
+            <label for="phone">Telefon</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+420 123 456 789" autocomplete="tel" />
+          </div>
+        </div>
+    
+        <div class="reveal" data-delay="100">
+          <div class="form-row">
+            <label for="message">Zpráva <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="6" placeholder="S čím vám můžeme pomoci?" required></textarea>
+          </div>
+        
+          <div class="form-actions">
+
+            <button id="sendBtn" type="submit" class="btn-primary">Odeslat</button>
+            <p id="formHint" class="form-hint" aria-live="polite"></p>
+
+               <script>
+                (() => {
+                  const form = document.getElementById('contactForm');
+                  if (!form) return;
+                // https://api.mrchat.cz/mywebping
+                  const endpoint = 'https://api.mrchat.cz/mywebping';
+                  const hint = document.getElementById('formHint');
+                  const btn  = document.getElementById('sendBtn');
+                
+                  form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    hint && (hint.textContent = '');
+                    btn && (btn.disabled = true, btn.textContent = 'Odesílám…');
+                
+                    const body = new URLSearchParams();
+                    body.set('name',    form.name.value.trim());
+                    body.set('service', form.service.value);
+                    body.set('email',   form.email.value.trim());
+                    body.set('phone',   form.phone.value.trim());
+                    body.set('message', form.message.value.trim());
+                    body.set('hp',      document.getElementById('company')?.value || '');
+                
+                    try {
+                      const res = await fetch(endpoint, { method: 'POST', body });
+                
+                      const headers = {};
+                      res.headers.forEach((v,k)=>headers[k]=v);
+                      const ctype = res.headers.get('content-type') || '';
+                      let payload = '';
+                      try {
+                        payload = ctype.includes('application/json')
+                          ? JSON.stringify(await res.json())
+                          : await res.text();
+                      } catch(_) {}
+                
+                      console.log('[FORM DEBUG]', {
+                        ok: res.ok, status: res.status, statusText: res.statusText,
+                        headers, payload
+                      });
+                
+                      if (!res.ok) {
+                        throw new Error(`HTTP ${res.status} ${res.statusText} — ${String(payload).slice(0,300)}`);
+                      }
+                
+                      hint && (hint.textContent = 'Zpráva byla odeslána. Zkontrolujte si potvrzovací e-mail.');
+                    } catch (err) {
+                      const looksLikeCORS = err instanceof TypeError;
+                      hint && (hint.textContent = looksLikeCORS
+                        ? 'CORS chyba. Pokud Vám příjde potvrzovací mail, pak je vše v pořádku, jinak to zkuste prosím později.'
+                        : 'Chyba při odesílání. Zkuste to prosím znovu.'
+                      );
+                      console.error('[FORM ERROR]', err);
+                    } finally {
+                      btn && (btn.disabled = false, btn.textContent = 'Odeslat');
+                    }
+                  });
+                })();
+                </script>
+                
+     
+
+
+
+          </div>
+        </div>
+      </form>
+    </section>
+       
+
+
   </main>
 
   <footer class="container">
-    <small>© 2025 Já</small>
+    <small>© 2025 Mr. chat</small>
   </footer>
 
   <script>
-    window.addEventListener("scroll", () => {
-      const navbar = document.querySelector(".navbar");
-      if (window.scrollY > 0) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
+    (function() {
+      const items = document.querySelectorAll('.reveal');
+  
+      if (!items.length) return;
+  
+      const io = new IntersectionObserver((entries, obs) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            obs.unobserve(e.target); 
+          }
+        }
+      }, {
+        root: null,
+        threshold: 0.03,       // stačí threshold % prvku v zorném poli
+        rootMargin: '0px 0px -10% 0px'
+      });
+  
+      items.forEach(el => io.observe(el));
+    })();
   </script>
 
-
+  <script>
+    // efekt pro navbar při scrollu
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 0) { navbar.classList.add("scrolled"); }
+      else { navbar.classList.remove("scrolled"); }
+    });
+  </script>
 </body>
 </html>
