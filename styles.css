@@ -25,7 +25,7 @@
   
   header { padding: 3rem 1.5rem; text-align: center; }
   
-  .header--tall { padding: 4.5rem 1.5rem 2rem; }
+  .header--tall { padding: 4.5rem 1.5rem 0rem; }
   .header--tall p { text-align: justify; text-align-last: left; }
   
   h1 { margin: 0 0 .5rem; font-size: clamp(2rem, 6vw, 3rem); }
@@ -43,15 +43,15 @@
   /* ==========================================================================
      3) Navbar
      Structure: .navbar > .nav-content { .nav-logo | .nav-links | .nav-actions }
-     Includes dropdown (.has-dropdown, .nav-trigger, .dropdown)
+     Includes dropdown (.has-dropdown, .nav-trigger, .dropdown)      header
      ========================================================================== */
   .navbar {
-    position: sticky;
-    top: 0;
-    background: transparent;
-    border-bottom: 1px solid transparent;
-    z-index: 1000;
-    transition: background .3s, border-color .3s;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  border-bottom: 1px solid #223056; /* <- změna: už není transparentní */
+  z-index: 1000;
+  transition: background .3s, border-color .3s;
   }
   .navbar.scrolled {
     background: #0b1020;
@@ -305,7 +305,7 @@
     padding: .8rem 1.1rem;
     border-radius: 12px;
     font-weight: 600;
-    background: linear-gradient(90deg, #1f3f46, #9be22d);
+    background: linear-gradient(90deg, #2a5f63, #9be22d);
     color: #0b1020;
     cursor: pointer;
     transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
@@ -793,3 +793,23 @@ a[class*="btn"]:active {
 
 .card, .card * { min-width: 0; }
 .card p, .card li, .card h2, .card h3 { overflow-wrap: anywhere; word-break: break-word; }
+
+.navbar a.btn-primary,
+.navbar a.btn-primary:hover,
+.navbar a.btn-primary:focus,
+.navbar a.btn-primary:focus-visible,
+.navbar a.btn-primary:active {
+  color: #0b1020;
+}
+
+
+.navbar .btn-primary.btn-sm{
+  padding: 0.85rem 1.1rem;  
+  line-height: 1;          
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar .btn-primary{
+  border-radius: 999px; 
+}
