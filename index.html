@@ -33,10 +33,9 @@
 <body>
   <nav class="navbar">
     <div class="container nav-content">
-      <div class="nav-logo" aria-label="Domů">
+      <a class="nav-logo" aria-label="MrChat – domovská stránka"  href="index.html">
         <img src="logo_s_názvem.svg" alt="Logo" />
-      </div>
-  
+      </a>  
       <ul class="nav-links" role="menubar" aria-label="Hlavní navigace">
         <li role="none"><a role="menuitem" href="index.html#start">Úvod</a></li>
 
@@ -58,7 +57,7 @@
         <li role="none"><a role="menuitem" href="index.html#formular">Kontakt</a></li>
       </ul>
   
-      <div class="nav-actions">
+      <!-- <div class="nav-actions">
        
         <a href="https://wa.me/420123456789" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -68,7 +67,7 @@
           </svg>
      
         </a>
-      </div>
+      </div> -->
     </div>
   </nav>
   
@@ -77,8 +76,8 @@
     <h1>Komunikujte efektivněji přes WhatsApp</h1>
     <p>
       Stavíme chytré produkty na platformě, kterou vaši zákazníci již každý den používají.
-WhatsApp je rychlý, srozumitelný a nevyžaduje instalaci nové neznámé aplikace — stává se tak ideální platformou
-pro audioprůvodce, zákaznickou podporu dostupnou 24/7 nebo rádce do kapsy.
+WhatsApp je rychlý, srozumitelný a nevyžaduje instalaci nové neznámé aplikace. Stává se tak ideální platformou
+pro audioprůvodce, zákaznickou podporu nebo rádce do kapsy.
     </p>
     <div style="display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin-top:1.2rem;">
       <a class="btn-primary" href="#nase_sluzby">Naše produkty</a>
@@ -95,13 +94,12 @@ pro audioprůvodce, zákaznickou podporu dostupnou 24/7 nebo rádce do kapsy.
         <h2 style="margin:0 0 .0rem; line-height:1.2;">Proč WhatsApp</h2>
         <p>
           Kdy naposledy byl někdo nadšený z toho, že si má kvůli jedné akci instalovat novou aplikaci?
-          Také nevíme, avšak drtivá většina lidí má již WhatsApp stažený, 
-          tak proč je posílat do neznáma s novou aplikací, když je lze oslovit tam, kde jsou jako doma?
+          Také nevíme, avšak drtivá většina lidí má již WhatsApp stažený, tak proč jim nenabídnout obsah na platformě kterou již znají?
 
         </p>
-        <p>WhatsApp je rychlý, srozumitelný a hlavně ho  mají lidé neustále po ruce. 
-        Podporuje text, hlas, obrázky i videa, takže naše programy mohou zásobovat koncové zákazníky bohatým 
-        obsahem 24 hodin denně. </p>
+        <p>WhatsApp je rychlý, přehledný a hlavně celosvětově rozšířený. 
+        Podporuje text, audio, obrázky i videa. Naše programy tak mohou zásobovat koncové zákazníky bohatým 
+        obsahem kdykoli bude třeba. </p>
 
               
 <!--  tady bych pak dal reference -->
@@ -110,10 +108,15 @@ pro audioprůvodce, zákaznickou podporu dostupnou 24/7 nebo rádce do kapsy.
 
       <section  style="display:flex; flex-direction:column; justify-content:flex-start;">
         <h2 style="margin:0 0 .0rem; line-height:1.2;">Proč my</h2>
-        <p>Nasazení programu? Jednodušší už to být nemůže. 
-          První verzi spustíme hned, jakmile se k  nám dostanou materiály, které chcete s klienty sdílet. Případné úpravy zvládáme za pochodu bez odstávky. 
-          Nemusíte pořizovat žádný nový hardware ani rozšiřovat svůj tým – veškerou technickou magii zařídíme my. 
+        <p>
+          
+
+          Dáváme důraz na individuální přístup. Budete v přímém kontaktu s lidmi, kteří řešení skutečně vyvíjí a spravují, nikoli jen s anonymní podporou.
+          Na pracovní dobu nehrajeme a v případě potíží se nám dovoláte klidně i ve 2 ráno.
+
+          Nemusíte pořizovat žádný nový hardware ani rozšiřovat svůj tým, technickou stránku kompletně vyřešíme my. 
           Vy získáte moderní službu bez starostí navíc a vaši zákazníci interaktivní zážitek.
+        
         </p>
       </section>
     </div>   
@@ -219,7 +222,7 @@ pro audioprůvodce, zákaznickou podporu dostupnou 24/7 nebo rádce do kapsy.
 
     <section class="card reveal" data-delay="100">
         <h2>Telefon</h2>
-        <p>+420 ... </p>
+        <p>+420 775 359 186</p>
       </section>
     
       <section class="card reveal" data-delay="100">
@@ -299,7 +302,7 @@ pro audioprůvodce, zákaznickou podporu dostupnou 24/7 nebo rádce do kapsy.
                     try {
                       const res = await fetch(endpoint, { method: 'POST', body });
                 
-                      const headers = {};
+                      const headers = {};a
                       res.headers.forEach((v,k)=>headers[k]=v);
                       const ctype = res.headers.get('content-type') || '';
                       let payload = '';
@@ -318,7 +321,7 @@ pro audioprůvodce, zákaznickou podporu dostupnou 24/7 nebo rádce do kapsy.
                         throw new Error(`HTTP ${res.status} ${res.statusText} — ${String(payload).slice(0,300)}`);
                       }
                 
-                      hint && (hint.textContent = 'Zpráva byla odeslána. Zkontrolujte si potvrzovací e-mail.');
+                      hint && (hint.textContent = 'Děkujeme za zprávu! Potvrzení naleznete v e-mailu :).');
                     } catch (err) {
                       const looksLikeCORS = err instanceof TypeError;
                       hint && (hint.textContent = looksLikeCORS
