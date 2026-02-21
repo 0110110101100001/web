@@ -282,8 +282,8 @@ pro audioprůvodce, zákaznickou podporu nebo rádce do kapsy.
                 (() => {
                   const form = document.getElementById('contactForm');
                   if (!form) return;
-                // https://api.mrchat.cz/mywebping
-                  const endpoint = 'https://deciding-flounder-moved.ngrok-free.app/mywebping';
+                  // const endpoint = 'https://deciding-flounder-moved.ngrok-free.app/mywebping';
+                  const endpoint = 'https://api.mrchat.cz/mywebping';
                   const hint = document.getElementById('formHint');
                   const btn  = document.getElementById('sendBtn');
                 
@@ -303,7 +303,7 @@ pro audioprůvodce, zákaznickou podporu nebo rádce do kapsy.
                     try {
                       const res = await fetch(endpoint, { method: 'POST', body });
                 
-                      const headers = {};a
+                      const headers = {};
                       res.headers.forEach((v,k)=>headers[k]=v);
                       const ctype = res.headers.get('content-type') || '';
                       let payload = '';
